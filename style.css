@@ -6,9 +6,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
 body {
-  margin: 40px;
+  margin: 1rem;
   padding-bottom: 5rem;
-  /* 고정된 하단 nav에 마지막 내용이 가려지지 않게 */
   text-align: center;
 }
 
@@ -17,33 +16,75 @@ p {
   padding: 0;
 }
 
+article {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 hr {
-  margin: 1.5rem 0;
+  max-width: 768px;
+  margin: 1.5rem auto;
+  border: none;
+  border-top: 0.5px solid black;
 }
 
 dl {
   margin: 0;
 }
 
-.credit {
+.block {
+  margin: 1rem auto;
+}
+
+.block-2 {
+  margin: 2rem 0;
+}
+
+.blank {
+  height: 0.5rem;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site {
   font-family: 'Asta Sans', sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.6;
-  text-align: left;
+  line-height: 1.8;
+  word-break: keep-all;
+  color: darkolivegreen;
 }
 
-.credit .date {
-  display: inline-block;
-  width: 4em;
+.description {
+  font-family: 'Asta Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  word-break: keep-all;
+  color: darkslateblue
 }
 
-.books {
-  --scale: 0.9px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  gap: 0.5rem 0.5rem;
+.character {
+  font-family: 'Gowun Batang', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  word-break: keep-all;
+  color: lightcoral;
+}
+
+.dialogue {
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  word-break: keep-all;
+  color: black;
 }
 
 .book {
@@ -53,7 +94,6 @@ dl {
   box-sizing: border-box;
 }
 
-/* 내용을 위에서부터 한 줄씩 가로 가운데 정렬로 쌓는 책 */
 .book-coral {
   padding: 1rem;
   display: flex;
@@ -91,54 +131,37 @@ dl {
   font-weight: 400;
   line-height: 1.8;
   word-break: keep-all;
+  color: black;
 }
 
-.block {
-  margin: 1rem 0;
-}
 
-.block-2 {
-  margin: 2rem 0;
-}
 
-.blank {
-  height: 0.5rem;
-}
-
-.site {
+.credit {
   font-family: 'Asta Sans', sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.8;
-  word-break: keep-all;
-  color: darkolivegreen;
+  line-height: 1.6;
+  text-align: left;
+  color: black;
 }
 
-.description {
-  font-family: 'Asta Sans', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.8;
-  word-break: keep-all;
-  color: darkslateblue
+.credit .date {
+  display: inline-block;
+  width: 4em;
 }
 
-.character {
-  font-family: 'Gowun Batang', serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.8;
-  word-break: keep-all;
-  color: lightcoral;
+.bookshelf {
+  --scale: 0.9px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.5rem 0.5rem;
 }
 
-.dialogue {
-  font-family: 'Gowun Dodum', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.8;
-  word-break: keep-all;
-}
+
+
+
+
 
 /* 화면 아래에 고정되는 가로 전체 띠 */
 .footer {
@@ -163,7 +186,6 @@ dl {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  /* 목차는 항상 정가운데 */
   align-items: center;
   pointer-events: auto;
   /* nav 안은 다시 클릭 가능 */
@@ -191,13 +213,12 @@ dl {
 .nav-circle {
   position: absolute;
   z-index: 1;
-  /* clip-path가 걸린 글자보다 위로 지나가게 */
   top: 0;
   left: 0;
   width: calc(var(--ball-size) * 1rem);
   height: calc(var(--ball-size) * 1rem);
   padding: 0;
-  border: 1px solid;
+  border: 1px solid black;
   border-radius: 50%;
   background-color: white;
   cursor: pointer;
